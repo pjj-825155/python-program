@@ -1,0 +1,3 @@
+title=ball
+author=peter
+orientation=portrait

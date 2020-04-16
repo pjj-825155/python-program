@@ -1,0 +1,4 @@
+char_number_data
+char_symbol_data
+char_lowletter_data
+char_highletter_data

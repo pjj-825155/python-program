@@ -1,0 +1,3 @@
+title=study1
+author=Kivy team
+orientation=landscape
