@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% if flag == 'success' %}
+<html>
+    <head>
+        <title>抢答成功</title>
+    </head>
+    <body>
+        <h1 style="text-align: center;font-size: 5em;margin-top: 20%;">抢答成功</h1>
+    </body>
+    <script>
+        setTimeout("javascript:location.href='/player/{{team}}'", 1500); 
+    </script>
+</html>
+{% endif %}
+{% if flag == 'timeout' %}
+<html>
+    <head>
+        <title>抢答失败</title>
+    </head>
+    <body>
+        <h1 style="text-align: center;font-size: 5em;margin-top: 20%;">抢答失败</h1>
+    </body>
+    <script>
+        setTimeout("javascript:location.href='/player/{{team}}'", 1500); 
+    </script>
+</html>
+{% endif %}
+{% if flag == 'defeat' %}
+<html>
+    <head>
+        <title>抢答失败</title>
+    </head>
+    <body>
+        <h1 style="text-align: center;font-size: 5em;margin-top: 20%;">抢答失败</h1>
+    </body>
+    <script>
+        setTimeout("javascript:location.href='/player/{{team}}'", 1500); 
+    </script>
+</html>
+{% endif %}

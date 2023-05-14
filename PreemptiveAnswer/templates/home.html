@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>多人抢答器</title>
+    </head>
+    <style>
+        * {margin: 0;padding: 0;}
+        html,body {width: 100%;margin: 0;padding: 0;}
+        input[type=submit]{background-color: green;border: none;color: white;width: 200px;height: 200px;text-decoration: none;font-size: 25px;margin: 8px 8px;cursor: pointer;border: 5px solid var(--theme-color,#888888);border-radius: 50px;}
+        .demo {position:absolute;width: 0; height: 0;border-left: 30px solid white;border-top: 15px solid transparent;border-bottom: 15px solid transparent;right: 10px;top: 365px;}
+        .demo:hover {position:absolute;width: 0; height: 0;border-left: 30px solid gray;border-top: 15px solid transparent;border-bottom: 15px solid transparent;right: 10px;top: 365px;}
+    </style>
+    <body>
+        <div style="text-align: center;">
+            <div>
+                <h1 style="margin: 50px 50px;font-size: 45px;">多 人 抢 答 器</h1>
+            </div>
+            <div>
+                <div style="position:relative;">
+                    <span>
+                        <form action="/host-login/" method="POST" style="display:inline;">
+                            <input id="cont1" type="submit" value="主持人">
+                        </form>
+                        <form action="/player-login/" method="POST" style="display:inline;">
+                            <input id="cont2" type="submit" value="参赛者">
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        var x1 = 400;
+        function turncolors(){
+            x1=(x1-1)%400;
+            x2=(x1-25)%400;
+            x3=(x1-50)%400;
+            x4=(x1-75)%400;
+            x5=(x1-100)%400;
+            document.getElementById('cont1').style.backgroundImage = "linear-gradient(to left bottom, hsl(" + x4 + ", 100%, 75%) 0%,hsl(" + x2 + ", 100%, 75%) 100%)";
+            document.getElementById('cont2').style.backgroundImage = "linear-gradient(to left bottom, hsl(" + x5 + ", 100%, 75%) 0%,hsl(" + x3 + ", 100%, 75%) 100%)";
+            setTimeout("turncolors()",100);
+        }
+        turncolors();
+    </script>
+</html>
